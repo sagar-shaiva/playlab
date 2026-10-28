@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y119X03KVV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y119X03KVV');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support My Dream — ₹1 Crore Goal | PlayLab</title>
+    <meta
+      name="description"
+      content="Help fuel a dream. Support Sagar's journey toward the ₹1 crore goal via PhonePe, Digital Rupee, Bitcoin, USDT, or direct bank transfer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="libs/icons-loader.js" defer></script>
+
+    <style>
+      /* ============ DONATE PAGE ============ */
+      .donate-page {
+        background: var(--bg);
+        min-height: 100vh;
+      }
+
+      /* Hero */
+      .donate-hero {
+        position: relative;
+        overflow: hidden;
+        padding: calc(var(--nav-height) + 64px) 0 72px;
+        text-align: center;
+        background: radial-gradient(1200px 500px at 50% -10%, rgba(99, 102, 241, 0.18), transparent 60%);
+      }
+      .donate-hero::before,
+      .donate-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.5;
+        z-index: 0;
+        animation: floatBlob 9s ease-in-out infinite;
+      }
+      .donate-hero::before {
+        width: 340px;
+        height: 340px;
+        background: #8b5cf6;
+        top: -80px;
+        left: -60px;
+      }
+      .donate-hero::after {
+        width: 300px;
+        height: 300px;
+        background: #ec4899;
+        bottom: -120px;
+        right: -40px;
+        animation-delay: 1.5s;
+      }
+      @keyframes floatBlob {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-26px) scale(1.08); }
+      }
+      .donate-hero .container {
+        position: relative;
+        z-index: 1;
+      }
+      .donate-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border-radius: var(--radius-full);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow-sm);
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--primary);
+        margin-bottom: 22px;
+      }
+      .donate-badge ion-icon { font-size: 1.1rem; }
+      .donate-title {
+        font-size: clamp(2.1rem, 5vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin: 0 auto 20px;
+        max-width: 16ch;
+      }
+      .donate-title .gradient-text {
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .donate-subtitle {
+        max-width: 60ch;
+        margin: 0 auto;
+        color: var(--text-secondary);
+        font-size: clamp(1rem, 2.2vw, 1.18rem);
+        line-height: 1.75;
+      }
+      .donate-back-link {
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        z-index: 50;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 16px;
+        border-radius: var(--radius-full);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: var(--transition);
+      }
+      .donate-back-link:hover {
+        color: var(--primary);
+        border-color: var(--primary);
+        transform: translateX(-2px);
+      }
+      .donate-theme-toggle {
+        position: fixed;
+        top: 18px;
+        right: 20px;
+        z-index: 50;
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        color: var(--text);
+        cursor: pointer;
+        font-size: 1.25rem;
+        transition: var(--transition);
+      }
+      .donate-theme-toggle:hover { color: var(--primary); border-color: var(--primary); }
+
+      /* Dream story */
+      .dream-story {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .dream-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        padding: 40px;
+        margin-top: -40px;
+        position: relative;
+        z-index: 2;
+      }
+      .dream-card h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .dream-card h2 ion-icon { color: var(--primary); }
+      .dream-card p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 14px;
+      }
+      .dream-card p:last-child { margin-bottom: 0; }
+      .dream-card .highlight { color: var(--text); font-weight: 600; }
+
+      /* Progress */
+      .progress-wrap {
+        max-width: 760px;
+        margin: 40px auto 0;
+        padding: 0 20px;
+      }
+      .progress-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        padding: 32px;
+      }
+      .progress-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .progress-raised {
+        font-size: 1.9rem;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+      .progress-raised .amt {
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .progress-goal {
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+      .progress-pct {
+        font-weight: 800;
+        color: var(--primary);
+        font-variant-numeric: tabular-nums;
+      }
+      .progress-track {
+        position: relative;
+        height: 22px;
+        border-radius: var(--radius-full);
+        background: var(--bg-alt);
+        overflow: hidden;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
+      }
+      .progress-fill {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 0;
+        border-radius: var(--radius-full);
+        background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899, #8b5cf6, #6366f1);
+        background-size: 300% 100%;
+        box-shadow: 0 0 18px rgba(139, 92, 246, 0.6);
+        transition: width 2.4s cubic-bezier(0.22, 1, 0.36, 1);
+        animation: shimmerFlow 3s linear infinite;
+      }
+      .progress-fill::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.45) 50%,
+          transparent
+        );
+        transform: translateX(-100%);
+        animation: sweep 2.2s ease-in-out infinite;
+      }
+      @keyframes shimmerFlow {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 300% 50%; }
+      }
+      @keyframes sweep {
+        0% { transform: translateX(-100%); }
+        60%, 100% { transform: translateX(300%); }
+      }
+      .progress-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 14px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      /* Payment section */
+      .pay-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 72px 20px 24px;
+      }
+      .pay-section-header {
+        text-align: center;
+        margin-bottom: 44px;
+      }
+      .pay-section-header h2 {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        font-weight: 900;
+        margin-bottom: 12px;
+      }
+      .pay-section-header p {
+        color: var(--text-secondary);
+        max-width: 54ch;
+        margin: 0 auto;
+      }
+      .pay-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 26px;
+      }
+      .pay-card {
+        position: relative;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        padding: 26px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        transition: var(--transition-slow);
+      }
+      .pay-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--accent-grad, var(--gradient-1));
+      }
+      .pay-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--border-hover);
+      }
+      .pay-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+        color: #fff;
+        background: var(--accent-grad, var(--gradient-1));
+        margin-bottom: 14px;
+        box-shadow: var(--shadow);
+      }
+      .pay-icon svg { width: 28px; height: 28px; }
+      .pay-icon .pay-sym {
+        font-size: 1.85rem;
+        font-weight: 800;
+        line-height: 1;
+        color: #fff;
+      }
+      .dream-heart { width: 1.3em; height: 1.3em; color: var(--primary); flex-shrink: 0; }
+      .pay-card h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 2px;
+      }
+      .pay-network {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        letter-spacing: 0.02em;
+      }
+      .qr-frame {
+        padding: 12px;
+        background: #fff;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+      }
+      .qr-frame img {
+        display: block;
+        width: 190px;
+        height: 190px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+      .pay-card .qr-hint {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 12px;
+      }
+      .addr-row {
+        width: 100%;
+        margin-top: 16px;
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .addr-value {
+        flex: 1;
+        min-width: 0;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        background: var(--bg-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 10px 12px;
+        color: var(--text);
+        text-align: left;
+        word-break: break-all;
+        line-height: 1.4;
+      }
+      .copy-btn {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        border: none;
+        border-radius: var(--radius-sm);
+        background: var(--gradient-1);
+        color: #fff;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .copy-btn ion-icon { font-size: 1.15rem; }
+      .copy-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+      .copy-btn:active { transform: translateY(0); }
+      .copy-btn.copied {
+        background: var(--success);
+      }
+
+      /* Bank section */
+      .bank-section {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 20px 20px 24px;
+      }
+      .bank-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+      }
+      .bank-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--gradient-2);
+      }
+      .bank-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .bank-head .pay-icon {
+        margin-bottom: 0;
+        background: var(--gradient-2);
+      }
+      .bank-head h3 {
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+      .bank-head p {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+      .bank-rows {
+        display: grid;
+        gap: 12px;
+      }
+      .bank-row {
+        display: grid;
+        grid-template-columns: 150px 1fr auto;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 18px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--bg-alt);
+      }
+      .bank-row .label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .bank-row .value {
+        font-weight: 700;
+        color: var(--text);
+        font-family: var(--font-mono);
+        word-break: break-word;
+        justify-self: start;
+      }
+      .bank-row .value.plain { font-family: var(--font); }
+      .bank-row .copy-btn {
+        justify-self: end;
+      }
+      @media (max-width: 520px) {
+        .bank-row {
+          grid-template-columns: 1fr auto;
+          gap: 6px 12px;
+        }
+        .bank-row .label { grid-column: 1 / -1; }
+      }
+
+      /* Thank you note */
+      .thanks-note {
+        max-width: 760px;
+        margin: 40px auto 0;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .thanks-note .heart {
+        font-size: 2.4rem;
+        color: #ec4899;
+        animation: beat 1.3s ease-in-out infinite;
+        display: inline-block;
+      }
+      @keyframes beat {
+        0%, 100% { transform: scale(1); }
+        25% { transform: scale(1.18); }
+        40% { transform: scale(1); }
+      }
+      .thanks-note p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-top: 10px;
+      }
+
+      /* Footer */
+      .donate-footer {
+        margin-top: 64px;
+        padding: 32px 20px;
+        text-align: center;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+      .donate-footer a { color: var(--primary); text-decoration: none; }
+      .donate-footer a:hover { text-decoration: underline; }
+
+      /* Toast */
+      .donate-toast {
+        position: fixed;
+        bottom: 28px;
+        left: 50%;
+        transform: translate(-50%, 120%);
+        z-index: 100;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        border-radius: var(--radius-full);
+        background: var(--text);
+        color: var(--bg);
+        font-weight: 600;
+        font-size: 0.88rem;
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+      }
+      .donate-toast.show { transform: translate(-50%, 0); opacity: 1; }
+      .donate-toast ion-icon { font-size: 1.15rem; color: #34d399; }
+
+      @media (max-width: 640px) {
+        .donate-hero { padding: 92px 0 56px; }
+        .pay-section { padding-top: 56px; }
+      }
+      @media (max-width: 560px) {
+        .dream-card, .progress-card, .bank-card { padding: 24px; }
+        .qr-frame img { width: 100%; max-width: 220px; height: auto; aspect-ratio: 1 / 1; }
+        .progress-raised { font-size: 1.5rem; }
+      }
+      @media (max-width: 400px) {
+        .donate-back-link { font-size: 0; gap: 0; padding: 10px; }
+        .donate-back-link ion-icon { font-size: 1.1rem; }
+        .dream-card, .progress-card, .bank-card { padding: 20px; }
+        .progress-card { padding: 20px 18px; }
+        .pay-card { padding: 22px 18px 20px; }
+        .progress-head { gap: 4px; }
+      }
+    </style>
+  </head>
+  <body class="donate-page">
+    <a class="donate-back-link" href="index.html" data-testid="donate-back"><ion-icon name="chevron-back-outline"></ion-icon> Back to PlayLab</a>
+    <button class="donate-theme-toggle" id="donateThemeToggle" aria-label="Toggle theme" data-testid="donate-theme-toggle">
+      <ion-icon name="moon-outline" id="donateThemeIcon"></ion-icon>
+    </button>
+
+    <!-- ==================== HERO ==================== -->
+    <header class="donate-hero">
+      <div class="container">
+        <span class="donate-badge" data-testid="donate-badge"><ion-icon name="sparkles-outline"></ion-icon> Fuel a Dream</span>
+        <h1 class="donate-title">Help Me Reach My <span class="gradient-text">₹1 Crore</span> Dream</h1>
+        <p class="donate-subtitle">
+          Every contribution — big or small — brings me one step closer. If my work has helped you, a small gift can help me build something much bigger. Thank you for believing in the journey. 🙏
+        </p>
+      </div>
+    </header>
+
+    <!-- ==================== DREAM STORY ==================== -->
+    <section class="dream-story">
+      <div class="dream-card" data-testid="dream-card">
+        <h2>
+          <svg class="dream-heart" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"/></svg>
+          Why ₹1 Crore?
+        </h2>
+        <p>
+          This goal is for <span class="highlight">my mother</span> — to fulfill every wish she quietly set aside for us. Your support brings a son one step closer to making her dreams come true. 💜
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== PROGRESS ==================== -->
+    <section class="progress-wrap">
+      <div class="progress-card" data-testid="progress-card">
+        <div class="progress-head">
+          <div class="progress-raised">
+            <span class="amt" id="raisedAmount" data-testid="raised-amount">₹92,112</span>
+            <span class="progress-goal"> / ₹1,00,00,000</span>
+          </div>
+          <span class="progress-pct" id="progressPct" data-testid="progress-pct">0%</span>
+        </div>
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="10000000"
+          aria-valuenow="92112"
+          data-raised="92112"
+          data-goal="10000000"
+          id="progressTrack"
+        >
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-meta">
+          <span><ion-icon name="people-outline"></ion-icon> Every rupee counts</span>
+          <span id="remainingAmount" data-testid="remaining-amount">₹99,07,888 to go</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAYMENT METHODS ==================== -->
+    <section class="pay-section" id="pay">
+      <div class="pay-section-header">
+        <h2>Choose Your Way to Give</h2>
+        <p>Scan a QR with any app, or copy a crypto address. Pick whatever is easiest for you.</p>
+      </div>
+
+      <div class="pay-grid">
+        <!-- PhonePe -->
+        <div class="pay-card" style="--accent-grad: linear-gradient(135deg, #5f259f, #8b5cf6)" data-testid="pay-phonepe">
+          <div class="pay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.25" width="11" height="19.5" rx="2.5"/><path d="M10 18.75h4"/></svg>
+          </div>
+          <h3>PhonePe / UPI</h3>
+          <div class="pay-network">Scan &amp; Pay — SAGAR S</div>
+          <div class="qr-frame"><img src="images/phone pe.png" alt="PhonePe QR code for Sagar S" loading="lazy" /></div>
+          <p class="qr-hint">Open any UPI app and scan to pay instantly.</p>
+          <div class="addr-row">
+            <code class="addr-value" id="upiId">canarabanksagar@ybl</code>
+            <button class="copy-btn" data-copy-target="upiId" data-label="UPI ID" data-testid="copy-upi" aria-label="Copy UPI ID" title="Copy">
+              <ion-icon name="copy-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Digital Rupee -->
+        <div class="pay-card" style="--accent-grad: linear-gradient(135deg, #1d4ed8, #3b82f6)" data-testid="pay-digital-rupee">
+          <div class="pay-icon"><span class="pay-sym">₹</span></div>
+          <h3>Digital Rupee (e₹)</h3>
+          <div class="pay-network">RBI CBDC — S SAGAR</div>
+          <div class="qr-frame"><img src="images/digital rupee.jpg" alt="RBI Digital Rupee QR code for S Sagar" loading="lazy" /></div>
+          <p class="qr-hint">Scan with your Digital Rupee (e₹) wallet.</p>
+        </div>
+
+        <!-- Bitcoin -->
+        <div class="pay-card" style="--accent-grad: linear-gradient(135deg, #f7931a, #fbbf24)" data-testid="pay-bitcoin">
+          <div class="pay-icon"><span class="pay-sym">₿</span></div>
+          <h3>Bitcoin (BTC)</h3>
+          <div class="pay-network">Network: BSC · BNB Smart Chain (BEP20)</div>
+          <div class="qr-frame"><img src="images/bitcoin.jpg" alt="Bitcoin deposit QR code (BEP20)" loading="lazy" /></div>
+          <div class="addr-row">
+            <code class="addr-value" id="btcAddr">0xb550b27ea1f9fbb12a77028dd39f90c20359b621</code>
+            <button class="copy-btn" data-copy-target="btcAddr" data-label="BTC address" data-testid="copy-btc" aria-label="Copy BTC address" title="Copy">
+              <ion-icon name="copy-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- USDT -->
+        <div class="pay-card" style="--accent-grad: linear-gradient(135deg, #26a17b, #34d399)" data-testid="pay-usdt">
+          <div class="pay-icon"><span class="pay-sym">₮</span></div>
+          <h3>USDT (Tether)</h3>
+          <div class="pay-network">Network: TRX · Tron (TRC20)</div>
+          <div class="qr-frame"><img src="images/USDT.jpg" alt="USDT deposit QR code (TRC20)" loading="lazy" /></div>
+          <div class="addr-row">
+            <code class="addr-value" id="usdtAddr">TBfhG66Y73UcuifPNMLghU8j8NcknocnXF</code>
+            <button class="copy-btn" data-copy-target="usdtAddr" data-label="USDT address" data-testid="copy-usdt" aria-label="Copy USDT address" title="Copy">
+              <ion-icon name="copy-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BANK DETAILS ==================== -->
+    <section class="bank-section">
+      <div class="bank-card" data-testid="bank-card">
+        <div class="bank-head">
+          <div class="pay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 21h19M3.75 21V9.5L12 4l8.25 5.5V21M9.25 21v-4.5h5.5V21M7 11.5h.75m8.25 0h.75M7 14.75h.75m8.25 0h.75"/></svg>
+          </div>
+          <div>
+            <h3>Direct Bank Transfer</h3>
+            <p>Canara Bank · NEFT / IMPS / RTGS</p>
+          </div>
+        </div>
+        <div class="bank-rows">
+          <div class="bank-row">
+            <span class="label">Account Name</span>
+            <span class="value plain" id="bankName">Sagar S</span>
+            <button class="copy-btn" data-copy-target="bankName" data-label="Account name" data-testid="copy-bank-name" aria-label="Copy account name" title="Copy"><ion-icon name="copy-outline"></ion-icon></button>
+          </div>
+          <div class="bank-row">
+            <span class="label">Account Number</span>
+            <span class="value" id="bankAccount">1080120000045</span>
+            <button class="copy-btn" data-copy-target="bankAccount" data-label="Account number" data-testid="copy-bank-account" aria-label="Copy account number" title="Copy"><ion-icon name="copy-outline"></ion-icon></button>
+          </div>
+          <div class="bank-row">
+            <span class="label">IFSC Code</span>
+            <span class="value" id="bankIfsc">CNRB0001080</span>
+            <button class="copy-btn" data-copy-target="bankIfsc" data-label="IFSC code" data-testid="copy-bank-ifsc" aria-label="Copy IFSC code" title="Copy"><ion-icon name="copy-outline"></ion-icon></button>
+          </div>
+          <div class="bank-row">
+            <span class="label">Branch</span>
+            <span class="value plain" id="bankBranch">Siddhartha Layout Branch, Mysore, India</span>
+            <button class="copy-btn" data-copy-target="bankBranch" data-label="Branch" data-testid="copy-bank-branch" aria-label="Copy branch" title="Copy"><ion-icon name="copy-outline"></ion-icon></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== THANK YOU ==================== -->
+    <section class="thanks-note">
+      <span class="heart">❤</span>
+      <p>
+        Thank you for taking the time to read my story and for any support you can give. Whether you donate or simply share this page, you're helping a dream move forward. I'm truly grateful. — <strong>Sagar</strong>
+      </p>
+    </section>
+
+    <footer class="donate-footer">
+      <p>&copy; 2026 PlayLab · Dream goal by <strong>S Sagar</strong> · <a href="index.html">Return to PlayLab</a></p>
+    </footer>
+
+    <div class="donate-toast" id="donateToast" role="status" aria-live="polite">
+      <ion-icon name="checkmark-circle"></ion-icon> <span id="donateToastText">Copied!</span>
+    </div>
+
+    <script>
+      (function () {
+        // ---- Theme sync with the rest of the site ----
+        var THEME_KEY = "playlab-theme";
+        var toggle = document.getElementById("donateThemeToggle");
+        var icon = document.getElementById("donateThemeIcon");
+        function applyTheme(theme) {
+          document.documentElement.setAttribute("data-theme", theme);
+          if (icon) icon.setAttribute("name", theme === "dark" ? "sunny-outline" : "moon-outline");
+        }
+        applyTheme(localStorage.getItem(THEME_KEY) || "light");
+        if (toggle) {
+          toggle.addEventListener("click", function () {
+            var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            applyTheme(next);
+            localStorage.setItem(THEME_KEY, next);
+          });
+        }
+
+        // ---- Toast ----
+        var toast = document.getElementById("donateToast");
+        var toastText = document.getElementById("donateToastText");
+        var toastTimer;
+        function showToast(msg) {
+          if (!toast) return;
+          toastText.textContent = msg;
+          toast.classList.add("show");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(function () {
+            toast.classList.remove("show");
+          }, 2200);
+        }
+
+        // ---- Copy to clipboard ----
+        function copyText(text) {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(text);
+          }
+          return new Promise(function (resolve, reject) {
+            try {
+              var ta = document.createElement("textarea");
+              ta.value = text;
+              ta.style.position = "fixed";
+              ta.style.opacity = "0";
+              document.body.appendChild(ta);
+              ta.focus();
+              ta.select();
+              document.execCommand("copy");
+              document.body.removeChild(ta);
+              resolve();
+            } catch (e) {
+              reject(e);
+            }
+          });
+        }
+
+        document.querySelectorAll(".copy-btn").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var target = document.getElementById(btn.getAttribute("data-copy-target"));
+            if (!target) return;
+            var text = (target.textContent || "").trim();
+            var label = btn.getAttribute("data-label") || "Value";
+            copyText(text).then(
+              function () {
+                var original = btn.innerHTML;
+                btn.classList.add("copied");
+                btn.innerHTML = '<ion-icon name="checkmark-circle"></ion-icon>';
+                showToast(label + " copied to clipboard!");
+                setTimeout(function () {
+                  btn.classList.remove("copied");
+                  btn.innerHTML = original;
+                }, 1800);
+              },
+              function () {
+                showToast("Couldn't copy — please copy manually.");
+              }
+            );
+          });
+        });
+
+        // ---- Animated progress bar ----
+        function formatINR(n) {
+          return "₹" + Number(n).toLocaleString("en-IN");
+        }
+        var track = document.getElementById("progressTrack");
+        var fill = document.getElementById("progressFill");
+        var raisedEl = document.getElementById("raisedAmount");
+        var pctEl = document.getElementById("progressPct");
+        var remainEl = document.getElementById("remainingAmount");
+
+        var raised = parseFloat(track.getAttribute("data-raised")) || 0;
+        var goal = parseFloat(track.getAttribute("data-goal")) || 10000000;
+        var pct = Math.max(0, Math.min(100, (raised / goal) * 100));
+
+        track.setAttribute("aria-valuenow", String(raised));
+        remainEl.textContent = formatINR(Math.max(0, goal - raised)) + " to go";
+
+        function animateCount(el, to, suffix) {
+          var start = null;
+          var duration = 1600;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min(1, (ts - start) / duration);
+            var eased = 1 - Math.pow(1 - p, 3);
+            var val = Math.round(to * eased);
+            el.textContent = suffix === "%" ? val + "%" : formatINR(val);
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+
+        function runProgress() {
+          requestAnimationFrame(function () {
+            fill.style.width = pct + "%";
+          });
+          animateCount(raisedEl, raised, "");
+          animateCount(pctEl, Math.round(pct), "%");
+        }
+
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  runProgress();
+                  io.disconnect();
+                }
+              });
+            },
+            { threshold: 0.4 }
+          );
+          io.observe(track);
+        } else {
+          runProgress();
+        }
+      })();
+    </script>
+  </body>
+</html>
